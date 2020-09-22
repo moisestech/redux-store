@@ -37,12 +37,39 @@ Characteristics of a Pure Function
 3) Never produce any side effects.
 */
 
-function todos(state = [], action) {
-  if (action.type === 'ADD_TODO') {
-    return state.concat([action.todo])
-  }
+// function todos(state = [], action) {
+//   if (action.type === 'ADD_TODO') {
+//     return state.concat([action.todo])
+//   } else if (action.type === 'REMOVE_TODO') {
+//     return state.filter((todo) => todo.id !== action.id)
+//   } else if (action.type === 'TOGGLE_TODO') {
+//     return state.map((todo) => todo.id !== action.id ? todo : {
+//       name: todo.name,
+//       id: todo.id,
+//       complete: !todo.complete
+//     })
+//   } else {
+//     return state
+//   }
+// }
 
-  return state
+// Community Standard Switch Statement
+// instead of IF ELSE statements
+function todos(state = [], action) {
+  switch (action.type) {
+    case "ADD_TODO":
+      return state.concat([action.todo]);
+    case "REMOVE_TODO":
+      return state.filter((todo) => todo.id !== action.id);
+    case "TOGGLE_TODO":
+      return state.map((todo) =>
+        todo.id !== action.id
+          ? todo
+          : Object.assign({}, todo, { complete: !todo.complete })
+      );
+    default:
+      return state;
+  }
 }
 
 function createStore(reducer) {
@@ -65,9 +92,9 @@ function createStore(reducer) {
   };
 
   const dispatch = (action) => {
-    state = reducer(state, action)
-    listeners.forEach((listener) => listener())
-  }
+    state = reducer(state, action);
+    listeners.forEach((listener) => listener());
+  };
 
   return {
     getState,
@@ -86,10 +113,10 @@ store.subscribe(() => {
 
 // dispatch example
 store.dispatch({
-  type: 'ADD_TODO',
+  type: "ADD_TODO",
   todo: {
     id: 0,
-    name: 'Learn Redux',
-    complete: false
-  }
-})
+    name: "Learn Redux",
+    complete: false,
+  },
+});
