@@ -76,11 +76,11 @@ function removeGoalAction(id) {
 }
 
 /*
-Characteristics of a Pure Function
-1) They always return the same result if the same arguments are passed in.
-2) They depend only on the arguments passed into them.
-3) Never produce any side effects.
-*/
+      Characteristics of a Pure Function
+      1) They always return the same result if the same arguments are passed in.
+      2) They depend only on the arguments passed into them.
+      3) Never produce any side effects.
+      */
 
 /* REDUCERS */
 
@@ -163,7 +163,7 @@ store.dispatch(removeTodoAction(1));
 store.dispatch(toggleTodoAction(0));
 
 store.dispatch(
-  addGoaActionl({
+  addGoalAction({
     id: 0,
     name: "Learn Redux",
   })
