@@ -159,8 +159,34 @@
 
       // subscribe example
       store.subscribe(() => {
-        console.log("The new state is:", store.getState());
+        const { goals, todos } = store.getState();
+
+        document.getElementById("goals").innerHTML = "";
+        document.getElementById("todos").innerHTML = "";
+
+        todos.forEach(addTodosToDOM);
+        goals.forEach(addGoalsToDOM);
       });
+
+      // subscribe update DOM functions
+      function addTodoToDOM(todo) {
+        const node = document.createElemennt("li");
+        const text = document.createTextNode(todo.name);
+        node.appendChild(text);
+        node.style.textDecoration = todo.complete ? "line-through" : "none";
+        node.addEventListener("click", () => {
+          store.dispatch(toggleTodoAction(todo.id));
+        });
+        document.getElementById("todos").appendChild(node);
+      }
+
+      function addGoalToDOM(goal) {
+        const node = document.createElemennt("li");
+        const text = document.createTextNode(goal.name);
+        node.appendChild(text);
+
+        document.getElementById("goals").appendChild(node);
+      }
 
       // dispatch example
       // store.dispatch(
@@ -209,7 +235,7 @@
 
       // DOM CODE
       function addTodo() {
-        const input = document.getELementById("todo");
+        const input = document.getElementById("todo");
         const name = input.value;
         input.value = "";
         store.dispatch(
@@ -222,7 +248,7 @@
       }
 
       function addGoal() {
-        const input = documetn.getELementById("goal");
+        const input = document.getElementById("goal");
         const name = input.value;
         input.value = "";
 
@@ -235,9 +261,9 @@
         );
       }
 
-      document.getELementById("todoBtn").addEventListener("click", addTodo);
+      document.getElementById("todoBtn").addEventListener("click", addTodo);
 
-      document.getELementById("goalBtn").addEventListener("click", addTodo);
+      document.getElementById("goalBtn").addEventListener("click", addTodo);
     </script>
   </body>
 </html>
