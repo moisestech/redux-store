@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
-import PropTypes from "prop-types";
 import ConnectedTodos from "./Todos";
 import ConnectedGoals from "./Goals";
-import { connect } from "react-redux";
-import { handleInitialData } from "./actions/shared";
+import { useSelector, useDispatch } from "react-redux";
+import { handleInitialData } from "../actions/shared";
 
-function App({ dispatch, loading }) {
+export default function App() {
+  dispatch = useDispatch();
+  const loading = useSelector((state) => state.loading);
+
   useEffect(() => {
-    dispatch(handleInitialData);
-  }, []);
+    dispatch(handleInitialData());
+  }, [dispatch]);
 
   return (
     <>
@@ -23,12 +25,3 @@ function App({ dispatch, loading }) {
     </>
   );
 }
-
-export default connect((state) => ({
-  loading: state.loading,
-}))(App);
-
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
-};
