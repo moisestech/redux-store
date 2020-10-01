@@ -1,34 +1,18 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
-import ConnectedTodos from "./Todos";
-import ConnectedGoals from "./Goals";
-import { connect } from "react-redux";
-import { handleInitialData } from "./actions/shared";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import "./index.css";
+import App from "./components";
 
-function App({ dispatch, loading }) {
-  useEffect(() => {
-    dispatch(handleInitialData);
-  }, []);
+import reducer from "./reducers";
+import middleware from "./middleware";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-  return (
-    <>
-      {loading === true ? (
-        <h3>Loading</h3>
-      ) : (
-        <div>
-          <ConnectedTodos />
-          <ConnectedGoals />
-        </div>
-      )}
-    </>
-  );
-}
+const store = createStore(reducer, middleware);
 
-export default connect((state) => ({
-  loading: state.loading,
-}))(App);
-
-App.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
-};
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
