@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function List({ items, toggle, remove, complete = false }) {
+function List({ items, toggle, remove }) {
   return (
     <ul>
       {items.map((item) => (
@@ -23,5 +23,4 @@ List.propTypes = {
   items: PropTypes.array.isRequired,
   toggle: PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired,
-  complete: PropTypes.func,
 };
