@@ -4,6 +4,8 @@ import ConnectedGoals from "./Goals";
 import { useSelector, useDispatch } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 
+import Loading from "./Loading";
+
 export default function App() {
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.loading);
@@ -15,7 +17,7 @@ export default function App() {
   return (
     <div className="app">
       {loading === true ? (
-        <h3>Loading</h3>
+        <Loading />
       ) : (
         <div>
           <ConnectedTodos />
