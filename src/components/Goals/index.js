@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { handleAddGoal, handleDeleteGoal } from "../../actions/goals";
+import List from "../List";
 
 export default function Goals() {
   const input = useRef("");
