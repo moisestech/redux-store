@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function List({ items, toggle, remove }) {
+export default function List({ items, toggle, remove }) {
   return (
     <ul>
       {items.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} className="list-item">
           <span
             onClick={() => toggle && toggle(item.id)}
             style={{ textDecoration: item.complete ? "line-through" : "none" }}
