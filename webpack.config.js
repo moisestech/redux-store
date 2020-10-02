@@ -21,7 +21,7 @@ module.exports = {
       template: "./src/public/index.html",
     }),
     new CopyPlugin({
-      patterns: [{ from: "_redirects" }],
+      patterns: [{ from: "./public/_redirects" }],
     }),
   ],
   devServer: {
