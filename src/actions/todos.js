@@ -48,7 +48,7 @@ export function handleAddTodo(name, cb) {
   };
 }
 
-export function handleToggle(id) {
+export function handleToggleTodo(id) {
   return (dispatch) => {
     dispatch(toggleTodo(id));
 
