@@ -33,7 +33,7 @@ export default function Todos() {
   return (
     <div>
       <h1>Todo List</h1>
-      <input type="text" placeholder="Add Todo" ref={input} />
+      <input type="text" placeholder="Add Todo" ref={input} className="input" />
       <button onClick={addItem}>Add Todo</button>
 
       <List toggle={toggleItem} items={todos} remove={removeItem} />
