@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function List({ items, toggle, remove }) {
   return (
-    <ul>
+    <ul className="todo-list">
       {items.map((item) => (
         <li key={item.id} className="list-item">
           <span
