@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 
 export default function App() {
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const loading = useSelector((state) => state.loading);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="app">
       {loading === true ? (
         <h3>Loading</h3>
       ) : (
@@ -22,6 +22,6 @@ export default function App() {
           <ConnectedGoals />
         </div>
       )}
-    </>
+    </div>
   );
 }
