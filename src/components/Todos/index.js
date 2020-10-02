@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import List from "./List";
+import List from "../List";
 
 // async action creators
 import {
   handleAddTodo,
   handleDeleteTodo,
   handleToggleTodo,
-} from "../../actions/todos";
+} from "../../actions/todos.js";
 
 export default function Todos() {
   const input = useRef("");
