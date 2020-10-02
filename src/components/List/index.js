@@ -21,6 +21,6 @@ export default function List({ items, toggle, remove }) {
 
 List.propTypes = {
   items: PropTypes.array.isRequired,
-  toggle: PropTypes.func.isRequired,
+  toggle: PropTypes.func,
   remove: PropTypes.func.isRequired,
 };
