@@ -46,11 +46,12 @@ body {
   margin: 0 auto;
 }
 
-.todo-list {
+ul.todo-list {
   background: #e8e8e8;
   border-radius: 4px;
   max-width: 400px;
   padding: 5px;
+  list-style: none;
 }
 
 .list-item {
@@ -66,10 +67,32 @@ body {
   color: black;
 }
 
+ul.todo-list > .list-item:hover {
+  background-color: #f5f5f5;
+}
+
 .todo {
   border-color: var(--red);
 }
 
 .goal {
   border-color: var(--blue);
+}
+
+/* .form-inline .form-control {
+  width: 50%;
+  margin-left: 80px;
+} */
+
+.done {
+  color: red;
+  text-decoration: line-through;
+}
+
+.undone {
+  color: #61dafb;
+}
+
+.icon {
+  margin: 6px 10px 6px 0;
 }
