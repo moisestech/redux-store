@@ -23,7 +23,7 @@ export default function Goals() {
   return (
     <div>
       <h1>Goals</h1>
-      <input type="text" placeholder="Add Goal" ref={input} />
+      <input type="text" placeholder="Add Goal" ref={input} className="input" />
       <button onClick={addItem}>Add Goal</button>
 
       <List items={goals} remove={removeItem} />
