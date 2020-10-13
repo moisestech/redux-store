@@ -35,6 +35,8 @@ body {
   color: var(--white);
 }
 
+/* APP */
+
 .app {
   background: #209cee;
   height: 100vh;
@@ -45,6 +47,8 @@ body {
   max-width: 600px;
   margin: 0 auto;
 }
+
+/* TODO */
 
 ul.todo-list {
   background: #e8e8e8;
@@ -75,6 +79,8 @@ ul.todo-list > .list-item:hover {
   border-color: var(--red);
 }
 
+/* GOAL */
+
 .goal {
   border-color: var(--blue);
 }
@@ -95,4 +101,22 @@ ul.todo-list > .list-item:hover {
 
 .icon {
   margin: 6px 10px 6px 0;
+}
+
+/* FORM */
+
+input[type="text"].input {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+input[type="text"].input:focus {
+  color: #333;
 }
