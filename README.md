@@ -1,6 +1,6 @@
-# Redux Store
+# Redux Todo App
 
-<img src="https://raw.githubusercontent.com/moisestech/chirp-react/master/public/assets/chirp_logo.png" width="150px"/>
+<img src="https://raw.githubusercontent.com/moisestech/redux-store/master/public/assets/todos.png" width="150px"/>
 
 **Redux Store Todo application**
 
@@ -11,6 +11,15 @@
 - ReactRedux Provider
 
 ## 🗺 URL Tree
+
+```bash
+├── /                   #Home
+├── /todos              #Todos
+├── /todos/todoId       #Todos:ID
+├── /goals              #Goals
+├── /goals/goalID       #Goals:ID
+└── /*                  #404
+```
 
 ### 🌿 App Tree
 
