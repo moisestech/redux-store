@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d56e4b2f-0796-43ab-8f4e-419b63d6ab6e/deploy-status)](https://app.netlify.com/sites/react-redux-todo-basic/deploys)
+🔗 [chirp.netlify.com](https://react-redux-todo-basic.netlify.app)
+
 # Redux Todo App
 
 <img src="https://raw.githubusercontent.com/moisestech/redux-store/master/public/assets/todos.png" width="150px"/>
